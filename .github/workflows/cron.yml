@@ -1,0 +1,14 @@
+# Scheduler for the Edge Functions that must run periodically. GitHub's cron may run a few minutes late;
+# if you need tighter timing use Supabase scheduled invocations or an external cron service instead.
+name: cron
+on:
+  schedule: [{ cron: "*/5 * * * *" }]
+  workflow_dispatch: {}
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    steps:
+      - name: reconcile-deposits
+        run: curl -fsS -X POST "${{ secrets.SUPABASE_FUNCTIONS_URL }}/reconcile-deposits" -H "x-cron-secret: ${{ secrets.CRON_SECRET }}"
+      - name: ops-cron
+        run: curl -fsS -X POST "${{ secrets.SUPABASE_FUNCTIONS_URL }}/ops-cron" -H "x-cron-secret: ${{ secrets.CRON_SECRET }}"

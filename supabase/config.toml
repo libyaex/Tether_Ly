@@ -1,0 +1,22 @@
+project_id = "libya-usdt-exchange"
+
+# Edge Function settings. The webhook and cron endpoints authenticate themselves (HMAC signature / x-cron-secret),
+# so Supabase's JWT gate is off for them and ON for everything a user calls.
+[functions.api]
+verify_jwt = true
+[functions.create-deposit]
+verify_jwt = true
+[functions.verify-deposit]
+verify_jwt = true
+[functions.export-csv]
+verify_jwt = true
+[functions.dpay-webhook]
+verify_jwt = false
+[functions.reconcile-deposits]
+verify_jwt = false
+[functions.ops-cron]
+verify_jwt = false
+[functions.push-dispatch]
+verify_jwt = false
+[functions.dpay-check]
+verify_jwt = true

@@ -1,0 +1,25 @@
+{
+  "id": "/",
+  "name": "Libya USDT Exchange",
+  "short_name": "USDT ليبيا",
+  "description": "المنصة الرائدة في ليبيا لشراء وبيع USDT مقابل الدينار الليبي",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0B2545",
+  "theme_color": "#0d9488",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "شحن المحفظة", "url": "/wallet/deposit", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "شراء USDT", "url": "/buy", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "بيع USDT", "url": "/sell", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
